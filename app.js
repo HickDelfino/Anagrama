@@ -44,26 +44,23 @@ let app = new Vue({
                 this.palavras.splice(this.palavras.indexOf(anagrama), 1)
             })
         },
-        limpaDuplicatas(){
+        limpaDuplicatas() {
             //Limpa duplicatas de palavras
-            this.anagramas = this.anagramas.filter((atual, proximo)=>{
+            this.anagramas = this.anagramas.filter((atual, proximo) => {
                 return this.anagramas.indexOf(atual) === proximo;
             })
         },
-        executafuncao(){
+        executafuncao() {
             this.percorreArray();
             this.limpaDuplicatas();
             this.limpaArray();
-            
-            document.getElementById('lista').style.display = "none";
             document.getElementById('resultado').style.display = "flex";
+            
+            //limpa a lista
+            const listacompleta = document.getElementsByClassName('lista');
+            for (let i = 0; i < listacompleta.length; i++ ){
+                listacompleta[i].style.display = "none";
+            }
         }
-
-
-
     }
-
-
-
-
 })
