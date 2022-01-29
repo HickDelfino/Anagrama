@@ -6,35 +6,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
-    <title>Document</title>
+    <title>Anagrama</title>
 </head>
 
 <body>
 
     <div id="app">
-        <h2> Digite a {{contador}}ª palavra para análise de anagrama</h2>
-        <input v-model="palavra" v-on:keyup.enter="adicionapalavra" type="text">
-        <button v-on:click="adicionapalavra">Adicionar</button>
-        <div id="lista" v-for="palavra in palavras">
-            <p>{{palavra}}</p>
-        </div>
-        <button v-on:click="executafuncao">Iniciar verificação</button>
-        <div id="resultado" style="display: none;">
-
-            <div id="isAnagrama">
-                <p v-for="anagrama in anagramas">{{anagrama}},</p>
+        <header>
+            <h2>Análise de anagramas utilizando Vue.js</h2>
+        </header>
+        <div class="main">
+            <!--Contador de palavras-->
+            <h2 class="digitePalavra"> Digite a {{contador}}ª palavra para análise de anagrama</h2>
+            <input class="chat" v-model="palavra" v-on:keyup.enter="adicionapalavra" type="text">
+            <button class="btn" v-on:click="adicionapalavra">Adicionar</button>
+            <!--lista-->
+            <div class="lista" v-for="palavra in palavras">
+                <p>{{palavra}}</p>
             </div>
-
-            <div id="dontisAnagrama">
-                <p v-for="palavra in palavras">{{palavra}}, </p>
+            <!--chama função-->
+            <button class="btn" v-on:click="executafuncao">Iniciar verificação</button>
+            <!--resultados-->
+            <div id="resultado" style="display: none;">
+                <h2>Estas palavras são anagramas</h2>
+                <div id="isAnagrama">
+                    <p v-for="anagrama in anagramas">{{anagrama}},</p>
+                </div>
+                <h2>Estas palavras não são anagramas</h2>
+                <div id="dontisAnagrama">    
+                    <p v-for="palavra in palavras">{{palavra}}, </p>
+                </div>
             </div>
-
         </div>
+        <footer>
+            <h4>by: Henrique Delfino</h4>
+        </footer>
     </div>
-
-
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="app.js"></script>
+
 </body>
 
 </html>
