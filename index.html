@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style.css">
     <title>Document</title>
 </head>
 
@@ -12,10 +13,22 @@
 
     <div id="app">
         <h2> Digite a {{contador}}ª palavra para análise de anagrama</h2>
-        <input v-model = "palavra" type="text">
+        <input v-model="palavra" v-on:keyup.enter="adicionapalavra" type="text">
         <button v-on:click="adicionapalavra">Adicionar</button>
-        <div v-for = "palavra in palavras">
+        <div id="lista" v-for="palavra in palavras">
             <p>{{palavra}}</p>
+        </div>
+        <button v-on:click="executafuncao">Iniciar verificação</button>
+        <div id="resultado" style="display: none;">
+
+            <div id="isAnagrama">
+                <p v-for="anagrama in anagramas">{{anagrama}},</p>
+            </div>
+
+            <div id="dontisAnagrama">
+                <p v-for="palavra in palavras">{{palavra}}, </p>
+            </div>
+
         </div>
     </div>
 

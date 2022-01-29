@@ -1,0 +1,13 @@
+#resultado{
+    display: flex;
+    flex-direction: column;
+}
+
+#isAnagrama{
+    border: solid 1px green;
+    display: flex;
+}
+#dontisAnagrama{
+    border: solid 1px blue;
+    display: flex;
+}
