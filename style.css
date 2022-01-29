@@ -13,16 +13,6 @@ header{
     width: 100%;
     font-size: 2vw;
 }
-footer{
-    width: 100%;
-    background-color: #004744;
-    color: white;
-    justify-content: center;
-    font-size: 1vw;
-    position: fixed;
-    bottom:0;
-    left:0;
-}
 /*Responsividade Mobile*/
 @media screen and (max-width: 1000px){
     #app{
@@ -71,7 +61,6 @@ footer{
     background-color: #fff;
     color:#004744;
 }
-
 /*Resultasos*/
 #resultado{
     display: flex;
@@ -92,4 +81,7 @@ footer{
     border-radius: 0.5vw;
     display: flex;
     margin-bottom: 4vw;
+}
+#iniciarVerificacao{
+    margin-bottom: 5vw!important;
 }

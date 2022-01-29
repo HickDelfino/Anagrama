@@ -25,7 +25,7 @@
                 <p>{{palavra}}</p>
             </div>
             <!--chama função-->
-            <button class="btn" v-on:click="executafuncao">Iniciar verificação</button>
+            <button id="iniciarVerificacao" class="btn" v-on:click="executafuncao">Iniciar verificação</button>
             <!--resultados-->
             <div id="resultado" style="display: none;">
                 <h2>Estas palavras são anagramas</h2>
@@ -38,9 +38,6 @@
                 </div>
             </div>
         </div>
-        <footer>
-            <h4>by: Henrique Delfino</h4>
-        </footer>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="app.js"></script>
